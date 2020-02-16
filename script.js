@@ -20,8 +20,7 @@ fetch(TFL_URL)
       );
       lineStatusContainer.appendChild(lineStatus);
 
-      lineStatusOverallContainer.appendChild(lineNameContainer);
-      lineStatusOverallContainer.appendChild(lineStatus);
+      lineStatusOverallContainer.append(lineNameContainer, lineStatusContainer);
 
       document.getElementById("status").appendChild(lineStatusOverallContainer);
     });
