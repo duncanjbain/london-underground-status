@@ -1,27 +1,73 @@
 const TFL_URL =
-  "https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status";
+    "https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status";
 
 fetch(TFL_URL)
-  .then(resp => resp.json()) // Transform the data into json
-  .then(data => {
-    console.log(data);
-    data.forEach(line => {
-      let lineStatusOverallContainer = document.createElement("div");
-      lineStatusOverallContainer.className =
-        "flex flex-row justify-between py-2";
+    .then(resp => resp.json()) // Transform the data into json
+    .then(data => {
+        console.log(data);
+        data.forEach(line => {
+            let lineStatusOverallContainer = document.createElement("div");
+            lineStatusOverallContainer.className =
+                "flex flex-row justify-between py-2 px-2";
+            lineStatusOverallContainer.id = line.id;
 
-      let lineNameContainer = document.createElement("p");
-      let lineName = document.createTextNode(line.name);
-      lineNameContainer.appendChild(lineName);
+            switch(line.id) {
+                case "bakerloo":
+                    lineStatusOverallContainer.classList.add('bakerloo-line');
+                    break;
+                case "central":
+                    lineStatusOverallContainer.classList.add('central-line');
+                    break;
+                case "circle":
+                    lineStatusOverallContainer.classList.add('circle-line');
+                    break;
+                case "district":
+                    lineStatusOverallContainer.classList.add('district-line');
+                    break;
+                case "dlr":
+                    lineStatusOverallContainer.classList.add('dlr');
+                    break;
+                case "hammersmith-city":
+                    lineStatusOverallContainer.classList.add('hammersmith-city-line');
+                    break;
+                case "jubilee":
+                    lineStatusOverallContainer.classList.add('jubilee-line');
+                    break;
+                case "london-overground":
+                    lineStatusOverallContainer.classList.add('overground');
+                    break;
+                case "metropolitan":
+                    lineStatusOverallContainer.classList.add('metropolitan-line');
+                    break;
+                case "northern":
+                    lineStatusOverallContainer.classList.add('northern-line');
+                    break;
+                case "piccadilly":
+                    lineStatusOverallContainer.classList.add('piccadilly-line');
+                    break;
+                case "tfl-rail":
+                    lineStatusOverallContainer.classList.add('bakerloo-line');
+                    break;
+                case "victoria":
+                    lineStatusOverallContainer.classList.add('victoria-line');
+                    break;
+                case "waterloo-city":
+                    lineStatusOverallContainer.classList.add('waterloo-city-line');
+                    break;
+            }
 
-      let lineStatusContainer = document.createElement("p");
-      let lineStatus = document.createTextNode(
-        line.lineStatuses[0].statusSeverityDescription
-      );
-      lineStatusContainer.appendChild(lineStatus);
+            let lineNameContainer = document.createElement("p");
+            let lineName = document.createTextNode(line.name);
+            lineNameContainer.appendChild(lineName);
 
-      lineStatusOverallContainer.append(lineNameContainer, lineStatusContainer);
+            let lineStatusContainer = document.createElement("p");
+            let lineStatus = document.createTextNode(
+                line.lineStatuses[0].statusSeverityDescription
+            );
+            lineStatusContainer.appendChild(lineStatus);
 
-      document.getElementById("status").appendChild(lineStatusOverallContainer);
+            lineStatusOverallContainer.append(lineNameContainer, lineStatusContainer);
+
+            document.getElementById("status").appendChild(lineStatusOverallContainer);
+        });
     });
-  });
