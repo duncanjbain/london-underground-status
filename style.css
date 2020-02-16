@@ -1,0 +1,67 @@
+.bakerloo-line {
+    background: #894e24;
+    color: white;
+}
+
+.central-line {
+    background: #E32017;
+    color: white;
+}
+
+.circle-line {
+    background: #FFD300;
+    color: black;
+}
+
+.district-line {
+    background: #00782A;
+}
+
+.hammersmith-city-line {
+    background: #F3A9BB;
+}
+
+.jubilee-line {
+    background: #A0A5A9;
+}
+
+.metropolitan-line {
+    background: #9B0056;
+}
+
+.northern-line {
+    background: black;
+    color: white;
+}
+
+.piccadilly-line {
+    background: #003688;
+}
+
+.victoria-line {
+    background: #0098D4;
+}
+
+.waterloo-city-line {
+    background: #95CDBA;
+}
+
+.dlr {
+    background: #00A4A7;
+}
+
+.overground {
+    background: #EE7C0E;
+}
+
+.tramlink {
+    background: #84B817;
+}
+
+.cable-car {
+    background: #E21836;
+}
+
+.crossrail {
+    background: #7156A5;
+}
