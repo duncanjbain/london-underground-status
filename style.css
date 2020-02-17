@@ -4,34 +4,34 @@
 }
 
 .central-line {
-    background: #E32017;
+    background: #dc241f;
     color: white;
 }
 
 .circle-line {
-    background: #FFD300;
+    background: #ffce00;
     color: black;
     text-shadow: 0 1px 0 rgba(255,255,255,.6);
 }
 
 .district-line {
-    background: #00782A;
+    background: #007229;
     color: white;
 }
 
 .hammersmith-city-line {
-    background: #F3A9BB;
+    background: #d799af;
     color: black;
     text-shadow: 0 1px 0 rgba(255,255,255,.6);
 }
 
 .jubilee-line {
-    background: #A0A5A9;
+    background: #6a7278;
     color: white;
 }
 
 .metropolitan-line {
-    background: #9B0056;
+    background: #751056;
     color: white
 }
 
@@ -41,37 +41,37 @@
 }
 
 .piccadilly-line {
-    background: #003688;
+    background: #0019a8;
     color: white;
 }
 
 
 .victoria-line {
-    background: #0098D4;
+    background: #00a0e2
     color: black;
     text-shadow: 0 1px 0 rgba(255,255,255,.6)
 }
 
 .waterloo-city-line {
-    background: #95CDBA;
+    background: #76d0bd;
     color: black;
     text-shadow: 0 1px 0 rgba(255,255,255,.6);
 }
 
 .dlr {
-    background: #00A4A7;
+    background: #00afad;
     color: black;
     text-shadow: 0 1px 0 rgba(255,255,255,.6)
 }
 
 .overground {
-    background: #EE7C0E;
+    background: #e86a10;
     color: black;
     text-shadow: 0 1px 0 rgba(255,255,255,.6);
 }
 
 .tramlink {
-    background: #84B817;
+    background: #6c0;
     color: white;
 }
 
@@ -85,6 +85,6 @@
 }
 
 .tfl-rail {
-    background: #003688;
+    background: #0019a8;
     color: white;
 }

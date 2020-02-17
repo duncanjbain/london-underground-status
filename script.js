@@ -1,10 +1,10 @@
-const TFL_API_URL =
-    "https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status";
+const TFL_API_URL = "https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status";
 
 async function getTflStatus(apiURL) {
     let response = await fetch(apiURL);
     return await response.json();
 }
+
 function showTflStatus() {
 getTflStatus(TFL_API_URL).then((data) => {
     data.forEach(line => {
