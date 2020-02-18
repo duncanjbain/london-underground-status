@@ -5,53 +5,6 @@ async function getTflStatus(apiURL) {
     return await response.json();
 }
 
-function styleStatusElement(lineName,styledContainer) {
-    switch(lineName) {
-        case "bakerloo":
-            styledContainer.classList.add('bakerloo');
-            break;
-        case "central":
-            styledContainer.classList.add('central');
-            break;
-        case "circle":
-            styledContainer.classList.add('circle');
-            break;
-        case "district":
-            styledContainer.classList.add('district');
-            break;
-        case "dlr":
-            styledContainer.classList.add('dlr');
-            break;
-        case "hammersmith-city":
-            styledContainer.classList.add('hammersmith-city');
-            break;
-        case "jubilee":
-            styledContainer.classList.add('jubilee');
-            break;
-        case "london-overground":
-            styledContainer.classList.add('london-overground');
-            break;
-        case "metropolitan":
-            styledContainer.classList.add('metropolitan');
-            break;
-        case "northern":
-            styledContainer.classList.add('northern');
-            break;
-        case "piccadilly":
-            styledContainer.classList.add('piccadilly');
-            break;
-        case "tfl-rail":
-            styledContainer.classList.add('tfl-rail');
-            break;
-        case "victoria":
-            styledContainer.classList.add('victoria');
-            break;
-        case "waterloo-city":
-            styledContainer.classList.add('waterloo-city');
-            break;
-    }
-}
-
 function showTflStatus() {
 getTflStatus(TFL_API_URL).then((data) => {
     data.forEach(line => {
@@ -60,7 +13,7 @@ getTflStatus(TFL_API_URL).then((data) => {
             "flex flex-row justify-between p-1 sm:p-2 border-b border-gray";
         lineStatusOverallContainer.id = line.id;
 
-        styleStatusElement(line.id,lineStatusOverallContainer)
+        lineStatusOverallContainer.classList.add(line.id);
 
         let lineNameContainer = document.createElement("p");
         let lineName = document.createTextNode(line.name);
