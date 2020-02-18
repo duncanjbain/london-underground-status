@@ -7,6 +7,7 @@ async function getTflStatus(apiURL) {
 
 function showTflStatus() {
 getTflStatus(TFL_API_URL).then((data) => {
+    console.log(data);
     data.forEach(line => {
         let lineStatusOverallContainer = document.createElement("div");
         lineStatusOverallContainer.className =
@@ -24,6 +25,9 @@ getTflStatus(TFL_API_URL).then((data) => {
             line.lineStatuses[0].statusSeverityDescription
         );
         lineStatusContainer.appendChild(lineStatus);
+
+        line.lineStatuses[0].statusSeverityDescription!== 'Good Service' ?  
+            lineStatusContainer.classList.add('font-bold') : lineStatusContainer.classList.add('font-normal')
 
         lineStatusOverallContainer.append(lineNameContainer, lineStatusContainer);
 
