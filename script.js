@@ -15,46 +15,46 @@ getTflStatus(TFL_API_URL).then((data) => {
 
         switch(line.id) {
             case "bakerloo":
-                lineStatusOverallContainer.classList.add('bakerloo-line');
+                lineStatusOverallContainer.classList.add('bakerloo');
                 break;
             case "central":
-                lineStatusOverallContainer.classList.add('central-line');
+                lineStatusOverallContainer.classList.add('central');
                 break;
             case "circle":
-                lineStatusOverallContainer.classList.add('circle-line');
+                lineStatusOverallContainer.classList.add('circle');
                 break;
             case "district":
-                lineStatusOverallContainer.classList.add('district-line');
+                lineStatusOverallContainer.classList.add('district');
                 break;
             case "dlr":
                 lineStatusOverallContainer.classList.add('dlr');
                 break;
             case "hammersmith-city":
-                lineStatusOverallContainer.classList.add('hammersmith-city-line');
+                lineStatusOverallContainer.classList.add('hammersmith-city');
                 break;
             case "jubilee":
-                lineStatusOverallContainer.classList.add('jubilee-line');
+                lineStatusOverallContainer.classList.add('jubilee');
                 break;
             case "london-overground":
-                lineStatusOverallContainer.classList.add('overground');
+                lineStatusOverallContainer.classList.add('london-overground');
                 break;
             case "metropolitan":
-                lineStatusOverallContainer.classList.add('metropolitan-line');
+                lineStatusOverallContainer.classList.add('metropolitan');
                 break;
             case "northern":
-                lineStatusOverallContainer.classList.add('northern-line');
+                lineStatusOverallContainer.classList.add('northern');
                 break;
             case "piccadilly":
-                lineStatusOverallContainer.classList.add('piccadilly-line');
+                lineStatusOverallContainer.classList.add('piccadilly');
                 break;
             case "tfl-rail":
                 lineStatusOverallContainer.classList.add('tfl-rail');
                 break;
             case "victoria":
-                lineStatusOverallContainer.classList.add('victoria-line');
+                lineStatusOverallContainer.classList.add('victoria');
                 break;
             case "waterloo-city":
-                lineStatusOverallContainer.classList.add('waterloo-city-line');
+                lineStatusOverallContainer.classList.add('waterloo-city');
                 break;
         }
 
