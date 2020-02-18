@@ -1,4 +1,4 @@
-const TFL_API_URL = "https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status";
+const TFL_API_URL ="https://api.tfl.gov.uk/line/mode/tube,overground,dlr,tflrail/status";
 
 async function getTflStatus(apiURL) {
     let response = await fetch(apiURL);
@@ -10,7 +10,7 @@ getTflStatus(TFL_API_URL).then((data) => {
     data.forEach(line => {
         let lineStatusOverallContainer = document.createElement("div");
         lineStatusOverallContainer.className =
-            "flex flex-row justify-between py-2 px-2 border-b border-gray";
+            "flex flex-row justify-between p-1 sm:p-2 border-b border-gray";
         lineStatusOverallContainer.id = line.id;
 
         switch(line.id) {
