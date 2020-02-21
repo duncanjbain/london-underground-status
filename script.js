@@ -6,17 +6,27 @@ async function getTflStatus(apiURL) {
   return await response.json();
 }
 
+function filterNormalLines(data) {
+  let normalLinesOnly = data.filter(function(lineInfo) {
+    return lineInfo.lineStatuses[0].statusSeverity === 10;
+})
+return normalLinesOnly;
+}
+
+function filterNonNormalLines(data) {
+  let nonNormalLinesOnly = data.filter(function(lineInfo) {
+    return lineInfo.lineStatuses[0].statusSeverity !== 10;
+  });
+  return nonNormalLinesOnly;
+}
+
 function showTflStatus() {
   getTflStatus(TFL_API_URL).then(data => {
     console.log(data);
 
-    let nonNormalLinesOnly = data.filter(function(lineInfo) {
-      return lineInfo.lineStatuses[0].statusSeverity !== 10;
-    });
 
-    let normalLinesOnly = data.filter(function(lineInfo) {
-      return lineInfo.lineStatuses[0].statusSeverity === 10;
-    });
+    let nonNormalLinesOnly = filterNonNormalLines(data);
+    let normalLinesOnly = filterNormalLines(data);
 
     console.log(nonNormalLinesOnly);
     nonNormalLinesOnly.forEach(line => {
