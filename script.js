@@ -6,14 +6,14 @@ async function getTflStatus(apiURL) {
   return await response.json();
 }
 
-function filterNormalLines(data) {
+let filterNormalLines = data => {
   let normalLinesOnly = data.filter(function(lineInfo) {
     return lineInfo.lineStatuses[0].statusSeverity === 10;
   });
   return normalLinesOnly;
 }
 
-function filterNonNormalLines(data) {
+let filterNonNormalLines = data => {
   let nonNormalLinesOnly = data.filter(function(lineInfo) {
     return lineInfo.lineStatuses[0].statusSeverity !== 10;
   });
