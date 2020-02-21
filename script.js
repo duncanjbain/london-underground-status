@@ -11,23 +11,20 @@ let filterNormalLines = data => {
     return lineInfo.lineStatuses[0].statusSeverity === 10;
   });
   return normalLinesOnly;
-}
+};
 
 let filterNonNormalLines = data => {
   let nonNormalLinesOnly = data.filter(function(lineInfo) {
     return lineInfo.lineStatuses[0].statusSeverity !== 10;
   });
   return nonNormalLinesOnly;
-}
+};
 
 function showTflStatus() {
   getTflStatus(TFL_API_URL).then(data => {
-    console.log(data);
-
     let nonNormalLinesOnly = filterNonNormalLines(data);
     let normalLinesOnly = filterNormalLines(data);
 
-    console.log(nonNormalLinesOnly);
     nonNormalLinesOnly.forEach(line => {
       let lineStatusOverallContainer = document.createElement("div");
       lineStatusOverallContainer.className =
