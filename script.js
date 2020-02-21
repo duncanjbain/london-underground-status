@@ -9,8 +9,8 @@ async function getTflStatus(apiURL) {
 function filterNormalLines(data) {
   let normalLinesOnly = data.filter(function(lineInfo) {
     return lineInfo.lineStatuses[0].statusSeverity === 10;
-})
-return normalLinesOnly;
+  });
+  return normalLinesOnly;
 }
 
 function filterNonNormalLines(data) {
@@ -23,7 +23,6 @@ function filterNonNormalLines(data) {
 function showTflStatus() {
   getTflStatus(TFL_API_URL).then(data => {
     console.log(data);
-
 
     let nonNormalLinesOnly = filterNonNormalLines(data);
     let normalLinesOnly = filterNormalLines(data);
