@@ -43,9 +43,7 @@ function showTflStatus() {
       );
       lineStatusContainer.appendChild(lineStatus);
 
-      line.lineStatuses[0].statusSeverityDescription !== "Good Service"
-        ? lineStatusContainer.classList.add("font-bold")
-        : lineStatusContainer.classList.add("font-normal");
+       lineStatusContainer.classList.add("font-bold")
 
       lineStatusOverallContainer.append(lineNameContainer, lineStatusContainer);
 
@@ -69,10 +67,6 @@ function showTflStatus() {
         line.lineStatuses[0].statusSeverityDescription
       );
       lineStatusContainer.appendChild(lineStatus);
-
-      line.lineStatuses[0].statusSeverityDescription !== "Good Service"
-        ? lineStatusContainer.classList.add("font-bold")
-        : lineStatusContainer.classList.add("font-normal");
 
       lineStatusOverallContainer.append(lineNameContainer, lineStatusContainer);
 
